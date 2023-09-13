@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "./Page404.module.css";
 
 import { useLocation, useNavigate } from 'react-router-dom';
 function Page404() {
