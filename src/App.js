@@ -3,6 +3,7 @@ import Nav from "./components/nav/Nav";
 import Courses from "./pages/app/courses/Courses";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./pages/app/details/Details";
+import Learn from "./pages/app/learn/Learn";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,12 +18,14 @@ function App() {
           path: '/courses',
           children: [
             {path: '', element: <Courses />},
-            {path: ':courseId', element: <Details/>}
+            { path: ':courseId', element: <Details/>}
           ]
-
+        },
+        {
+          path: '/learn/:courseId', element: <Learn/>
         }
       ],
-
+      
     },
   ]);
   
