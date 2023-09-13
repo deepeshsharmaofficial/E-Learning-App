@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Nav.module.css";
+import { Outlet } from "react-router-dom";
 
 function Nav() {
   return (
@@ -19,6 +20,7 @@ function Nav() {
         </div>
       </div>
     </nav>
+    <Outlet />
     </>
   );
 }
