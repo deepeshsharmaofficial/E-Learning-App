@@ -4,6 +4,7 @@ import Courses from "./pages/app/courses/Courses";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./pages/app/details/Details";
 import Learn from "./pages/app/learn/Learn";
+import Chapter from "./pages/app/chapter/Chapter";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,8 +13,6 @@ function App() {
       element: <Nav/>,
       children: [
         {path: '', element: <Hero />},
-        // {path: '/courses', element: <Courses />},
-        // {path: '/courses/details/:id', element: <Details />}
         {
           path: '/courses',
           children: [
@@ -22,7 +21,11 @@ function App() {
           ]
         },
         {
-          path: '/learn/:courseId', element: <Learn/>
+          path: '/learn/:courseId',
+          element: <Learn/>,
+          children: [
+            {path: 'chapter/:chapterId', element: <Chapter />}
+          ]
         }
       ],
       
